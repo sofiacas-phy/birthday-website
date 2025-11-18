@@ -1,0 +1,353 @@
+body
+{
+
+background: linear-gradient(135deg, #ffc0cb, #ffe4e1);
+font-family: 'Comic Sans MS', cursive, sans-serif;
+margin: 0;
+
+}
+/* Centers the main card on normal pages */
+.page-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;   /* space under Snoopy if on homepage */
+}
+
+.homepage 
+{
+    max-width: 700px;      /* how wide the text block can get */
+    margin: 10px auto 50px; /* top, left/right auto = centered, bottom */
+    text-align: center;    /* center the text inside */
+    padding: 20px;
+}
+
+/* Centers any content placed inside it */
+.page-center 
+{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;   /* space below Snoopy */
+    padding-bottom: 80px; /* breathing room on bottom */
+}
+
+
+.card 
+{
+    background-color: #9caf88;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+    max-width: 400px;
+    max-height: 800px;
+    margin: 80px auto;
+}
+
+
+h1 
+{
+    color: #595e48;
+    font-size: 1.8em;
+}
+
+.message
+{
+    font-size: 1.0em;
+    color: #000000;
+    margin: 20px 0;
+
+}
+
+/* SPOTIFY PLAYLIST */
+.playlist-button a 
+{
+    display: inline-block;
+    background-color: #ffd6e8;       /* soft pastel pink */
+    color: #d1628b;                  /* rose text */
+    padding: 22px 50px;              /* ⬅ SUPER CUTE BIG BUBBLE */
+    font-size: 1.5rem;               /* ⬅ adorable big text */
+    font-weight: bold;
+    font-family: "Comic Sans MS", cursive;
+    text-decoration: none;
+
+    border-radius: 40px;             /* ⬅ KAWAII ROUND BUBBLE */
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5);
+
+    position: relative;
+    overflow: visible;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: floaty 3s ease-in-out infinite;
+}
+
+.playlist-button a:hover {
+    transform: translateY(-10px) scale(1.12);   /* cute little lift */
+    box-shadow: 0 15px 35px rgba(255, 182, 193, 0.75);
+}
+
+
+
+/* ✨ Sparkle effect on hover */
+.playlist-button a {
+    position: relative; /* allows sparkles to be positioned inside */
+    overflow: visible;
+}
+
+/* sparkles are two glowing dots using ::before and ::after */
+.playlist-button a::before,
+.playlist-button a::after {
+    content: "✨";
+    position: absolute;
+    font-size: 1.1rem;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+/* sparkle positions */
+.playlist-button a::before {
+    top: -15px;
+    left: -10px;
+}
+
+.playlist-button a::after {
+    bottom: -15px;
+    right: -10px;
+}
+
+/* show sparkles on hover */
+.playlist-button a:hover::before,
+.playlist-button a:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.playlist-button a:hover 
+{
+    transform: translateY(-8px) scale(1.10);   /* ⬅ stronger lift for bigger button */
+    box-shadow: 0 12px 28px rgba(255, 182, 193, 0.6);
+}
+
+/* ✨ Sparkly Trail Container */
+.playlist-button {
+    position: relative;
+}
+
+/* Sparkle piece */
+.sparkle {
+    position: absolute;
+    font-size: 1.1rem;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Sparkle animation */
+@keyframes sparkleTrail {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.6);
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(20px, -40px) scale(1);
+    }
+}
+
+/* when hovering the button, spawn sparkles */
+.playlist-button:hover .sparkle {
+    animation: sparkleTrail 0.9s ease-out forwards;
+}
+
+
+
+.footer
+{
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Styling the Buttons in Homepage*/
+.nav
+{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.nav-button 
+{
+    display: inline-block;
+    background-color: #ffd6e8;
+    color: #d1628b;
+    padding: 16px 35px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Comic Sans MS", cursive;
+
+    /* 🌸 soft glow */
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.45);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: floaty 3s ease-in-out infinite;
+}
+
+
+
+.nav-button:hover 
+{
+    transform: translateY(-8px) scale(1.10);
+
+    /* stronger glow on hover */
+    box-shadow: 
+        0 0 20px rgba(255, 182, 193, 0.6),
+        0 0 35px rgba(255, 167, 203, 0.4);
+}
+
+
+
+/* Photo Styling for Memories Page */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Polaroid container */
+.polaroid {
+    background: #fff;
+    padding: 10px 10px 20px 10px; /* extra bottom space for caption */
+    border-radius: 4px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    width: 150px;
+    text-align: center;
+    transform: rotate(-2deg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Slight randomness if you want variation */
+.polaroid:nth-child(2n) {
+    transform: rotate(2deg);
+}
+
+.polaroid:nth-child(3n) {
+    transform: rotate(-4deg);
+}
+
+/* Image inside Polaroid */
+.polaroid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Caption text */
+.polaroid .caption {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #555;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Hover effect (pick-up effect) */
+.polaroid:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+/* Special layout just for the photos page */
+.photos-page .card {
+    max-width: 900px;          /* wider card so images can wrap in rows */
+    margin: 40px auto;         /* some space from the top */
+}
+.photos-page
+{
+    min-height: 100vh;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Make sure the gallery is a wrapping row, not a single column */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+/* 🌸 Floating Buttons Container (right side of screen) */
+.floating-buttons {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 🌸 Individual Floating Buttons */
+.float-btn {
+    background: #ffd6e8; /* soft pink */
+    color: #d1628b;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Comic Sans MS", cursive;
+    box-shadow: 0 6px 15px rgba(255, 182, 193, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: floaty 4s ease-in-out infinite;
+}
+
+/* 🌺 Hover Lift */
+.float-btn:hover {
+    transform: translateY(-6px) scale(1.07);
+    box-shadow: 0 10px 20px rgba(255, 182, 193, 0.6);
+}
+
+@keyframes floaty {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* Snoopy gif at top*/
+.snoopy-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;     /* space from very top */
+    margin-bottom: 10px;  /* little gap before the heading */
+}
+
+.snoopy-gif 
+{
+    width: 360px;        
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 182, 193, 0.8));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
